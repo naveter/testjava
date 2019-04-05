@@ -1,7 +1,5 @@
 package test;
 
-//import java.util.*;
-
 import test.sub.TestGenerics;
 
 import java.util.ArrayList;
