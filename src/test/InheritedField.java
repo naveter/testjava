@@ -18,20 +18,21 @@ public class InheritedField {
         String str = "abc";
 
         void printLength() {
-            System.out.println(str.length());
+            // NullPointerException - str вызывается в конструкторе предка и пока не определилось в наследнике
+//            System.out.println(str.length());
         }
     }
 
     // Попытка множественного наследования
-    class ExtOuterClass extends test.sub.OuterClass {
+    class ExtOuterClass extends OuterClass {
         @Override
         public void outerMethod() {
             super.outerMethod();
         }
         // Тут возвращаемое значение изменено на потомка
         @Override
-        public test.sub.Child sig(test.sub.Parent p) {
-            return (test.sub.Child) super.sig(p);
+        public Child sig(Parent p) {
+            return (Child) super.sig(p);
         }
     }
 
@@ -46,7 +47,7 @@ class OuterClass {
     void outerMethod() {
         System.out.println("From OuterClass.outerMethod()");
     }
-    test.sub.Parent sig(test.sub.Parent p){
+    Parent sig(Parent p){
         return p;
     }
 }
@@ -54,10 +55,10 @@ class OuterClass {
 class Parent {
 
 }
-class Child extends test.sub.Parent {
+class Child extends Parent {
 
 }
-class SubChild extends test.sub.Child {
+class SubChild extends Child {
 
 }
 
