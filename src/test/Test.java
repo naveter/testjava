@@ -1,6 +1,6 @@
 package test;
 
-//import java.util.*;
+import test.sub.TestGenerics;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,10 +13,11 @@ public class Test {
 
     public static void main(String[] args) {
 //        System.out.println(TestException.method());
-        InheritedField.main();
+//        InheritedField.main();
 //        UseAnnotation.go();
 //        TestInteger.go();
 //        TestFinalize.run();
+        TestGenerics.go();
 
 
 
