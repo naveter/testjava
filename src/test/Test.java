@@ -18,6 +18,7 @@ public class Test {
 //        TestInteger.go();
 //        TestFinalize.run();
         TestGenerics.go();
+        Scope.go();
 
 
 
