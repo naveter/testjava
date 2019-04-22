@@ -7,6 +7,8 @@ package test;
  */
 public class Scope {
 
+    private ScopeStaticI ss;
+
     public static void go() {
         ScopeStaticI ss = new ScopeStaticImpl();
         ScopeStaticI.staticMethod();
@@ -16,10 +18,13 @@ public class Scope {
 //        ScopeStaticImpl.staticMethod();
 //        ss.staticMethod();
 
+        System.out.println();
     }
 }
 
 interface ScopeStaticI {
+    int field = 2;
+
     static void staticMethod() {
         System.out.println("ScopeStaticI staticMethod");
     }

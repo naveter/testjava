@@ -13,6 +13,7 @@ public class TestInteger {
         String s3 = new String("a");
         String s4 = new String("a");
         System.out.println("new String('a') == new String('a'):" + (s3 == s4));
+        System.out.println("new String('a').intern() == new String('a').intern():" + (s3.intern() == s4.intern()));
 
 
         String s1 = "b";
