@@ -23,6 +23,7 @@ public class Scope {
 }
 
 interface ScopeStaticI {
+    // Field in interface is final static
     int field = 2;
 
     static void staticMethod() {
