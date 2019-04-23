@@ -1,10 +1,12 @@
 package test;
 
 import test.sub.TestGenerics;
+import test.visitor.VisitorTest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -16,12 +18,11 @@ public class Test {
 //        System.out.println(TestException.method());
 //        InheritedField.main();
 //        UseAnnotation.go();
-        TestInteger.go();
+//        TestInteger.go();
 //        TestFinalize.run();
 //        TestGenerics.go();
 //        Scope.go();
-
-
+        VisitorTest.go();
 
     }
 
