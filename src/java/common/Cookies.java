@@ -1,8 +1,8 @@
-package test;
+package common;
 
-import test.annot.ControlledObject;
-import test.annot.StartObject;
-import test.annot.StopObject;
+import common.annot.ControlledObject;
+import common.annot.StartObject;
+import common.annot.StopObject;
 
 @ControlledObject(name="biscuits")
 public class Cookies {

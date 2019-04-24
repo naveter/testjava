@@ -1,4 +1,4 @@
-package test.sub;
+package common.sub;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,13 +38,13 @@ public class TestGenerics {
         List<? super SubType> contrList4 = ch1.write2contr(contrList3);
 
         // Доступность метода подтипа, у которого видимость расширена
-        test.otherpackage.Parent ch2 = new test.otherpackage.Child();
+        common.otherpackage.Parent ch2 = new common.otherpackage.Child();
 //        ch2.sig("w"); // Так метод доступен не будет
         // После приведения станет доступен
-        ((test.otherpackage.Child)ch2).sig("w");
+        ((common.otherpackage.Child)ch2).sig("w");
 
         // В списке будет и подкласс, будет видеть только тип суперкласса
-        List<test.otherpackage.Parent> list3 = Arrays.asList(new test.otherpackage.Parent(), new test.otherpackage.Child());
+        List<common.otherpackage.Parent> list3 = Arrays.asList(new common.otherpackage.Parent(), new common.otherpackage.Child());
         list3.stream().forEach(c -> System.out.println(c.ret().toString()));
 
 

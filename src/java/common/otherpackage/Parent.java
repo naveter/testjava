@@ -1,4 +1,4 @@
-package test.otherpackage;
+package common.otherpackage;
 
 /**
  * Parent.

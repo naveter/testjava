@@ -3,7 +3,7 @@
  * Copyright (c) 2019 VTB Group. All rights reserved.
  */
 
-package test;
+package common;
 
 /**
  * TestFinalize.

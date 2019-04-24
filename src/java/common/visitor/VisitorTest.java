@@ -1,4 +1,4 @@
-package test.visitor;
+package common.visitor;
 
 /**
  * VisitorTest.

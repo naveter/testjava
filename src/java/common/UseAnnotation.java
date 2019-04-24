@@ -1,8 +1,8 @@
-package test;
+package common;
 
-import test.annot.ControlledObject;
-import test.annot.StartObject;
-import test.annot.StopObject;
+import common.annot.ControlledObject;
+import common.annot.StartObject;
+import common.annot.StopObject;
 
 import java.lang.reflect.Method;
 
@@ -12,7 +12,7 @@ public class UseAnnotation {
 
         Class cl = null;
         try {
-            cl = Class.forName("test.Cookies");
+            cl = Class.forName("java.common.Cookies");
         }
         catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());
