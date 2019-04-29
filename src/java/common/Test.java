@@ -1,7 +1,5 @@
 package common;
 
-import common.visitor.VisitorTest;
-
 /**
  * Super comment.
  */
@@ -15,7 +13,11 @@ public class Test {
 //        TestFinalize.run();
 //        TestGenerics.go();
 //        Scope.go();
-        VisitorTest.go();
+//        VisitorTest.go();
+        StreamTest.go();
+
+
+
 
     }
 
