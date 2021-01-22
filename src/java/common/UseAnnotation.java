@@ -3,6 +3,7 @@ package common;
 import common.annot.ControlledObject;
 import common.annot.StartObject;
 import common.annot.StopObject;
+import common.Cookies;
 
 import java.lang.reflect.Method;
 
@@ -12,7 +13,7 @@ public class UseAnnotation {
 
         Class cl = null;
         try {
-            cl = Class.forName("java.common.Cookies");
+            cl = Class.forName("common.Cookies");
         }
         catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());

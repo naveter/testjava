@@ -20,8 +20,9 @@ public class TestInteger {
         String s2 = "b";
         System.out.println("String 'a' == 'a': " + (s1 == s2));
 
-        List<? extends Number> numList = new ArrayList<>();
-//        numList.add(new Integer(10));
+        // При добавлении в список используется конрвариантность super
+        List<? super Number> numList = new ArrayList<>();
+        numList.add(new Integer(10));
 
     }
 }
