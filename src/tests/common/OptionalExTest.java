@@ -126,6 +126,14 @@ public class OptionalExTest {
 
     @Data
     public class Modem {
+        public Double getPrice() {
+            return price;
+        }
+
+        public void setPrice(Double price) {
+            this.price = price;
+        }
+
         private Double price;
 
         public Modem(Double price) {
@@ -183,6 +191,12 @@ public class OptionalExTest {
         private String name;
         private int age;
         private String password;
+
+        Person(String name, int age, String password) {
+            this.name = name;
+            this.age = age;
+            this.password = password;
+        }
 
         public Optional<String> getName() {
             return Optional.ofNullable(name);
