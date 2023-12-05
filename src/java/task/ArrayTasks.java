@@ -47,12 +47,10 @@ public class ArrayTasks {
             intMap3.merge(key, 1, (a, b) -> a + b);
         });
 
-//        Optional<Map.Entry<Integer, Integer>> res = intMap3.entrySet().stream()
-//                .filter(entry -> 1 == entry.getValue()).findAny();
+        Optional<Map.Entry<Integer, Integer>> res = intMap3.entrySet().stream()
+                .filter(entry -> 1 == entry.getValue()).findAny();
 
-        intMap3.forEach((key, value) -> {
-            if (1 == value) System.out.println(key);
-        });
+        System.out.println(res.get().getKey());
 
     }
 

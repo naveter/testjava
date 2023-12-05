@@ -3,7 +3,7 @@
 *.ipr
 *.iws
 *.iml
-misc.xml
+.idea/misc.xml
 
 ### Java ###
 target/
