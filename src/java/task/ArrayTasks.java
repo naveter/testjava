@@ -9,6 +9,34 @@ public class ArrayTasks {
 
     }
 
+    public static boolean testMethod(String str1, String str2) {
+
+        List<String> arr1 = new ArrayList<>(Arrays.asList(str1));
+        List<String> arr2 = new ArrayList<>(Arrays.asList(str2));
+
+        HashMap<String, Integer> str1Map = new HashMap<>();
+        arr1.stream().forEach(i -> {
+            str1Map.putIfAbsent(i, 0);
+            str1Map.put(i, str1Map.get(i) + 1);
+        });
+
+        HashMap<String, Integer> str2Map = new HashMap<>();
+        arr2.stream().forEach(i -> {
+            str2Map.putIfAbsent(i, 0);
+            str2Map.put(i, str2Map.get(i) + 1);
+        });
+
+        // Get greater by length HashMap
+        for(Map.Entry<String, Integer> entry : str1Map.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+
+            if ( !str2Map.containsKey(key) || !str2Map.get(key).equals(value) ) return false;
+        }
+
+        return true;
+    }
+
     /**
      * Print first non doubling value in array[]
      * @return
