@@ -17,10 +17,10 @@ public class Test {
 //        UseAnnotation.go();
 //        TestInteger.go();
 //        TestFinalize.run();
-        TestGenerics.go();
+//        TestGenerics.go();
 //        Scope.go();
 //        VisitorTest.go();
-//        StreamTest.go();
+        StreamTest.go();
 
 
 

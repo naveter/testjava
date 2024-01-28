@@ -1,40 +1,39 @@
 package task;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class ArrayTasks {
 
     public static void main(String[] args) {
-        nonDoubleSym();
+        System.out.println(polidrom("abcd", "dcba"));
+//        nonDoubleSym();
 
     }
 
-    public static boolean testMethod(String str1, String str2) {
-
-        List<String> arr1 = new ArrayList<>(Arrays.asList(str1));
-        List<String> arr2 = new ArrayList<>(Arrays.asList(str2));
+    /*
+    * Polidrom or not?
+    * */
+    public static boolean polidrom(String str1, String str2) {
+        if (str1.length() != str2.length()) return false;
 
         HashMap<String, Integer> str1Map = new HashMap<>();
-        arr1.stream().forEach(i -> {
+        Stream.of(str1.split("")).forEach(i -> {
             str1Map.putIfAbsent(i, 0);
             str1Map.put(i, str1Map.get(i) + 1);
         });
 
         HashMap<String, Integer> str2Map = new HashMap<>();
-        arr2.stream().forEach(i -> {
+        Stream.of(str2.split("")).forEach(i -> {
             str2Map.putIfAbsent(i, 0);
             str2Map.put(i, str2Map.get(i) + 1);
         });
 
-        // Get greater by length HashMap
-        for(Map.Entry<String, Integer> entry : str1Map.entrySet()) {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
-
-            if ( !str2Map.containsKey(key) || !str2Map.get(key).equals(value) ) return false;
-        }
-
-        return true;
+//        return str1Map.equals(str2Map);
+        return str1Map.entrySet().stream()
+                .allMatch(e -> e.getValue().equals(str2Map.get(e.getKey()))) &&
+                str2Map.entrySet().stream()
+                        .allMatch(e -> e.getValue().equals(str1Map.get(e.getKey())));
     }
 
     /**
@@ -79,7 +78,9 @@ public class ArrayTasks {
                 .filter(entry -> 1 == entry.getValue()).findAny();
 
         System.out.println(res.get().getKey());
-
     }
+
+
+
 
 }
