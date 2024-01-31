@@ -6,15 +6,28 @@ import java.util.stream.Stream;
 public class ArrayTasks {
 
     public static void main(String[] args) {
-        System.out.println(polidrom("abcd", "dcba"));
+//        System.out.println(anagram2("abcd", "dcba"));
+        System.out.println(palindrome("abcd", "dcba"));
 //        nonDoubleSym();
 
     }
 
-    /*
-    * Polidrom or not?
-    * */
-    public static boolean polidrom(String str1, String str2) {
+    /**
+     * Check, whether 2 words palindrome or not: "Madam, I’m Adam"
+     */
+    public static boolean palindrome(String str1, String str2) {
+        if (str1.length() != str2.length()) return false;
+
+        List<String> list2 = Arrays.asList(str2.split(""));
+        Collections.reverse(list2);
+
+        return str1.equals(String.join("", list2));
+    }
+
+    /**
+     * Check, whether 2 words anagram or not: "New York Times" = "monkeys write"
+     */
+    public static boolean anagram1(String str1, String str2) {
         if (str1.length() != str2.length()) return false;
 
         HashMap<String, Integer> str1Map = new HashMap<>();
@@ -34,6 +47,18 @@ public class ArrayTasks {
                 .allMatch(e -> e.getValue().equals(str2Map.get(e.getKey()))) &&
                 str2Map.entrySet().stream()
                         .allMatch(e -> e.getValue().equals(str1Map.get(e.getKey())));
+    }
+
+    public static boolean anagram2(String str1, String str2) {
+        if (str1.length() != str2.length()) return false;
+
+        List<String> list1 = Arrays.asList(str1.split(""));
+        List<String> list2 = Arrays.asList(str2.split(""));
+
+        Collections.sort(list1);
+        Collections.sort(list2);
+
+        return list1.equals(list2);
     }
 
     /**
