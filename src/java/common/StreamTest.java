@@ -1,5 +1,7 @@
 package common;
 
+import lombok.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,10 +15,16 @@ import java.util.stream.Stream;
  */
 public class StreamTest {
 
+    public static void main(String[] args) {
+        sumOfObject();
+
+    }
+
     public static void go() {
         StreamTest st = new StreamTest();
         st.terminateOperation();
         st.funcInterfaces();
+        st.sumOfObject();
 
     }
 
@@ -64,11 +72,47 @@ public class StreamTest {
 
 
 
+    }
+
+    @RequiredArgsConstructor
+    public static class Order {
+        String title;
+        List<Object> items;
+        Double sum;
+
+        public Order(String title, List<Object> items, Double sum) {
+            this.title = title;
+            this.items = items;
+            this.sum = sum;
+        }
+
+        public Double getSum() {
+            return this.sum;
+        }
+    }
+
+    static Double summAll1 = 0D;
+
+    /**
+     * Calculate with StreamAPI amount of field sum
+     */
+    public static void sumOfObject() {
+        List<Order> orders = new ArrayList<>();
+        orders.add(new Order("Samanta", null, 25D));
+        orders.add(new Order("Smith", null, 30D));
+        System.out.println(
+                orders.stream().mapToDouble(Order::getSum).sum()
+        );
+        System.out.println(
+                orders.stream().collect(Collectors.summingDouble(o -> o.getSum()))
+        );
+
+        orders.stream().forEach( i -> summAll1 += i.getSum());
+        System.out.println(summAll1);
+
 
 
     }
-
-
 
 
 
