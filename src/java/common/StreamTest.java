@@ -17,7 +17,7 @@ public class StreamTest {
 
     public static void main(String[] args) {
         sumOfObject();
-
+        test1();
     }
 
     public static void go() {
@@ -109,9 +109,16 @@ public class StreamTest {
 
         orders.stream().forEach( i -> summAll1 += i.getSum());
         System.out.println(summAll1);
+    }
 
+    public static void test1() {
+        List<String> myList = Arrays.asList("a1", "a2", "b1", "c2", "c1");
 
-
+        myList.stream()
+                .filter(s -> s.startsWith("c"))
+                .map(String::toUpperCase)
+                .sorted()
+                .forEach(System.out::print);
     }
 
 
