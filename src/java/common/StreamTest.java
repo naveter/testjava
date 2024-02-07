@@ -89,6 +89,9 @@ public class StreamTest {
         public Double getSum() {
             return this.sum;
         }
+        public String getTitle() {
+            return this.title;
+        }
     }
 
     static Double summAll1 = 0D;
@@ -100,6 +103,8 @@ public class StreamTest {
         List<Order> orders = new ArrayList<>();
         orders.add(new Order("Samanta", null, 25D));
         orders.add(new Order("Smith", null, 30D));
+
+        // Calculate sum of double
         System.out.println(
                 orders.stream().mapToDouble(Order::getSum).sum()
         );
@@ -109,6 +114,11 @@ public class StreamTest {
 
         orders.stream().forEach( i -> summAll1 += i.getSum());
         System.out.println(summAll1);
+
+        // Calculate array of strings
+        System.out.println(
+                orders.stream().map(Order::getTitle).collect(Collectors.toList())
+        );
     }
 
     public static void test1() {
