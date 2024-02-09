@@ -7,9 +7,9 @@ public class ArrayTasks {
 
     public static void main(String[] args) {
 //        System.out.println(anagram2("abcd", "dcba"));
-        System.out.println(palindrome("abcd", "dcba"));
+//        System.out.println(palindrome("abcd", "dcba"));
 //        nonDoubleSym();
-
+        immutableList();
     }
 
     /**
@@ -103,6 +103,30 @@ public class ArrayTasks {
                 .filter(entry -> 1 == entry.getValue()).findAny();
 
         System.out.println(res.get().getKey());
+    }
+
+    /**
+     * Create immutable class A with List as field
+     */
+    public static void immutableList() {
+        class A {
+            private List<String> lst;
+//            private private List<Integer> marks = Collections.unmodifiableList(null);
+            public A(List<String> lst) {
+                this.lst = new ArrayList<>(lst); // protect from change orig list
+            }
+            public List<String> getLst() {
+                return new ArrayList<>(this.lst); // protect from change fields list
+            }
+        }
+
+        List<String> a1 = new ArrayList<>();
+        a1.add("first");
+        A a = new A(a1);
+        a1.add("third"); // protect from change orig list
+        List<String> lst2 = a.getLst();
+        lst2.add("third"); // protect from change fields list
+        System.out.println(a.getLst());
     }
 
 
