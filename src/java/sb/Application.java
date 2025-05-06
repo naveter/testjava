@@ -33,6 +33,11 @@ public class Application {
                 System.out.println(beanName);
             }
 
+            // HelloService prototype, but will creates couple times
+            // Can be resolved with @Scope(proxyMode = ScopedProxyMode.TARGET_CLASS) on HelloService.class
+            ctx.getBean(HelloService.class);
+            ctx.getBean(HelloService.class);
+
         };
     }
 
