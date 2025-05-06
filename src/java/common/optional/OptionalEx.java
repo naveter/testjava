@@ -1,9 +1,9 @@
-package common;
+package common.optional;
 
 /**
  * OptionalEx.
  *
- * @author Ilya_Gulevskiy
+ * @author naveter
  */
 public class OptionalEx {
 }

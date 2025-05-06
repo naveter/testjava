@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 /**
  * StreamTest.
  *
- * @author Ilya_Gulevskiy
+ * @author naveter
  */
 public class StreamTest {
 
@@ -24,7 +24,8 @@ public class StreamTest {
         StreamTest st = new StreamTest();
         st.terminateOperation();
         st.funcInterfaces();
-        st.sumOfObject();
+        sumOfObject();
+        test1();
 
     }
 

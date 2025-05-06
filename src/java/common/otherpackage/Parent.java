@@ -3,7 +3,7 @@ package common.otherpackage;
 /**
  * Parent.
  *
- * @author Ilya_Gulevskiy
+ * @author naveter
  */
 public class Parent {
     protected void sig(String s) {

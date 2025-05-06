@@ -1,4 +1,4 @@
-package common;
+package common.optional;
 
 import static org.junit.Assert.*;
 
@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 /**
  * OptionalExTest.
  *
- * @author Ilya_Gulevskiy
+ * @author naveter
  */
 public class OptionalExTest {
 

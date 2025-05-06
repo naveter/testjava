@@ -3,7 +3,7 @@ package common.visitor;
 /**
  * VisitorTest.
  *
- * @author Ilya_Gulevskiy
+ * @author naveter
  */
 public class VisitorTest {
     public static void go() {

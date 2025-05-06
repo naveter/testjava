@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 /**
  * TestGenerics.
  *
- * @author Ilya_Gulevskiy
+ * @author naveter
  */
 public class TestGenerics {
     public static void go() {
@@ -83,7 +83,7 @@ class Parent {
 
         return st;
     }
-    // то-же самое с дженериком
+    // то-же самое с типизированным параметром
     <T extends SubType> List<T> readFromCoverGen(List<T> list) {
         SubType s = list.get(0);
         return list;
@@ -94,7 +94,7 @@ class Parent {
         list.add(new SubType());
         return list;
     }
-    // то-же самое, но с дженериком не работает
+    // то-же самое, но с типизированным параметром не работает
 //    <K super SubType> List<K> write2contrGen(List<K> list) {
 //        list.add(new SubType());
 //        return list;

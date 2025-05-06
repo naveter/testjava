@@ -3,7 +3,7 @@ package common.otherpackage;
 /**
  * Child.
  *
- * @author Ilya_Gulevskiy
+ * @author naveter
  */
 public class Child extends Parent {
     // Изменили видимость метода

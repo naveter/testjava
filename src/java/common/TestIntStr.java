@@ -3,7 +3,7 @@ package common;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestInteger {
+public class TestIntStr {
 
     public static void go() {
         System.out.println("(Integer) 1 == (Integer) 1:" + ((Integer) 1 == (Integer) 1));
@@ -24,8 +24,15 @@ public class TestInteger {
         List<? super Number> numList = new ArrayList<>();
         numList.add(new Integer(10));
 
-        // 1 commit to branch1
-        // 2 commit to branch1
+        // Case with explanation especial state of String as return value from method
+        String someString = "_someString";
+        String someString2 = "_someString";
+        System.out.println("someString == '_' + getString():" + (someString == "_" + getString()));
+        System.out.println("someString.equals('_' + getString()):" + someString.equals("_" + getString()));
+        System.out.println("someString == somestring2:" + (someString == someString2));
+    }
 
+    private static String getString() {
+        return "someString";
     }
 }

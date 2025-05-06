@@ -8,7 +8,7 @@ package common;
 /**
  * TestFinalize.
  *
- * @author Ilya_Gulevskiy
+ * @author naveter
  */
 public class TestFinalize {
 

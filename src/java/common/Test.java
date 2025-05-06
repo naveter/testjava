@@ -15,12 +15,12 @@ public class Test {
 //        System.out.println(TestException.method());
 //        InheritedField.main();
 //        UseAnnotation.go();
-//        TestInteger.go();
+        TestIntStr.go();
 //        TestFinalize.run();
 //        TestGenerics.go();
 //        Scope.go();
 //        VisitorTest.go();
-        StreamTest.go();
+//        StreamTest.go();
 
 
 

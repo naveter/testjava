@@ -3,7 +3,7 @@ package common;
 /**
  * Scope.
  *
- * @author Ilya_Gulevskiy
+ * @author naveter
  */
 public class Scope {
 
