@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "Swagger2DemoRestController", description = "REST APIs related to Student Entity!!!!")
 @RestController
 public class HelloController {
-    // When inject prototype bean into singleton, prototype will call once
+    // When inject prototype bean into singleton, prototype will call once when singleton created
     @Autowired
     private HelloService helloService;
 

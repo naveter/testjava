@@ -1,4 +1,4 @@
-package common;
+package common.stream;
 
 import lombok.*;
 
@@ -75,7 +75,6 @@ public class StreamTest {
 
     }
 
-    @RequiredArgsConstructor
     public static class Order {
         String title;
         List<Object> items;

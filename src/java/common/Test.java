@@ -1,5 +1,6 @@
 package common;
 
+import common.stream.Stream2Test;
 import common.sub.TestGenerics;
 import common.visitor.VisitorTest;
 
@@ -15,13 +16,13 @@ public class Test {
 //        System.out.println(TestException.method());
 //        InheritedField.main();
 //        UseAnnotation.go();
-        TestIntStr.go();
+//        TestIntStr.go();
 //        TestFinalize.run();
 //        TestGenerics.go();
 //        Scope.go();
 //        VisitorTest.go();
 //        StreamTest.go();
-
+        Stream2Test.go();
 
 
 
