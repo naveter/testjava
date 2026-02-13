@@ -1,11 +1,6 @@
 package common;
 
-import common.stream.Stream2Test;
-import common.sub.TestGenerics;
-import common.visitor.VisitorTest;
-
-import java.util.HashMap;
-import java.util.HashSet;
+import common.stream.*;
 
 /**
  * Super comment.
@@ -21,7 +16,8 @@ public class Test {
 //        TestGenerics.go();
 //        Scope.go();
 //        VisitorTest.go();
-//        StreamTest.go();
+
+        StreamTest.go();
         Stream2Test.go();
 
 
