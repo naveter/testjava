@@ -1,0 +1,83 @@
+-- 2.1
+select distinct location_id from departments;
+
+-- 2.2
+select * from products where rating_p in(3,4) and price > 700;
+
+-- 2.3
+select * from employees e where e.employee_id in(155,160)
+
+-- 2.4 Вывести last_name где 2 или более буквы e
+ select * from employees where (CHAR_LENGTH(last_name) - CHAR_LENGTH(REPLACE(last_name, 'e', ''))) >= 2
+ select * from employees where last_name ~ 'e.*e' is TRUE   
+
+-- 2.5 
+select l.city, l.postal_code   from locations l where l.country_id in('US','CA') and l.postal_code like '%2'
+
+-- 2.6 Вывести записи где job_id содержит строку MAN
+select e.employee_id , e.department_id , e.first_name , e.last_name , e.salary , e.job_id  
+from employees e
+where e.salary > 1100 and position('MAN' in e.job_id) > 0
+
+-- 2.7
+select e.first_name || ' ' || e.last_name || ' должность ' || e.job_id || ' зарплата в год ' || (e.salary * 12) from employees e
+
+-- 2.8
+select employee_id, department_id, first_name, last_name, salary, job_id, 
+CASE
+	WHEN salary <= 5000 THEN 'low'
+	WHEN salary > 5000 and salary <= 10000 THEN 'midl'
+	ELSE 'high'
+END AS lev
+from employees
+
+-- 2.9
+select t1.*
+from (select *, (0.1*salary*rating_e ) as bonus from employees) as t1
+where t1.bonus is not null 
+order by t1.bonus desc limit 3 offset 0
+
+-- 4.2
+select count(*) as cnt from products where position('CORE' in upper(product_name) ) > 0
+
+-- 4.3
+select e.manager_id , SUM(e.salary ) from employees e where e.rating_e % 2 <> 0  group by e.manager_id 
+
+-- 4.4 Кол-во заказов по годам для клиента 46
+select count(*), to_char(o.order_date, 'YYYY') as year 
+from orders o 
+where o.customer_id = 46
+group by o.customer_id, year 
+
+-- 4.5 Кол-во заказов по месяцам 2019
+select to_char(o.order_date, 'MM') as mon, count(*) from orders o where to_char(o.order_date , 'YYYY') in ('2019') group by to_char(o.order_date, 'MM')
+
+
+-- 4.6 Номера товаров проданных < 10 раз
+select oi.product_id, count(*) as cnt from order_items oi group by oi.product_id having count(*) < 10
+
+-- 4.7 Отделы где > 5 менеджеров
+select e.department_id , count(*) from employees e group by e.department_id having count(*) > 5
+
+-- 4.8 Товары в заказах с order_id < 10
+select oi.order_id , oi.product_id , count(*), sum(oi.unit_price) from order_items oi where oi.order_id < 10 group by oi.order_id, oi.product_id   
+
+-- 4.9
+select count(*), to_char(o.order_date, 'YYYY') as year, 0 as cust 
+from orders o 
+group by year 
+union 
+select count(*), to_char(o.order_date, 'YYYY') as year, o.customer_id as cust 
+from orders o 
+group by o.customer_id, year having count(*) > 2 
+
+-- 4.10
+select e.department_id , sum(e.salary) from employees e group by e.department_id 
+
+
+
+
+
+
+
+
